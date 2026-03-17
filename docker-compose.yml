@@ -1,0 +1,18 @@
+services:
+  chatbot:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      # Pass the OpenAI API key from the host .env file
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Tell rag.py where to find the pre-built contextual FAISS index
+      - FAISS_INDEX_PATH=/workspace/index/contextual_faiss
+    volumes:
+      # Mount the pre-built index read-only (built by running the notebook)
+      - ./index:/workspace/index:ro
+      # Mount the data directory (Chapter 5 PDF) read-only
+      - ./data:/workspace/data:ro
+    restart: unless-stopped

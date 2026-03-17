@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the distributional hypothesis?",
+    "ground_truth_answer": "The distributional hypothesis is the link between the similarity in how words are distributed in text and the similarity in what they mean. It posits that words occurring in similar contexts tend to have similar meanings."
+  },
+  {
+    "question": "How is vector semantics defined in the context of NLP?",
+    "ground_truth_answer": "Vector semantics is the linguistic field that studies embeddings, which are vector representations of the meaning of words learned directly from word distributions in texts."
+  },
+  {
+    "question": "What is the difference between a lemma and a wordform?",
+    "ground_truth_answer": "A lemma, or citation form, is the base form of a word, such as 'mouse' or 'sing'. A wordform is the specific inflected form of that word, such as 'mice', 'sung', or 'carpets'."
+  },
+  {
+    "question": "According to the principle of contrast, do true, identical synonyms exist?",
+    "ground_truth_answer": "Probably no two words are absolutely identical in meaning. The principle of contrast states that a difference in linguistic form is always associated with some difference in meaning."
+  },
+  {
+    "question": "How does 'word relatedness' differ from 'word similarity'?",
+    "ground_truth_answer": "Words can be related without being similar; for example, 'coffee' and 'cup' share practically no features and are not similar, but they are related eventively because they co-participate in the everyday event of drinking."
+  },
+  {
+    "question": "What three dimensions did Osgood et al. (1957) use to represent the affective meaning of words?",
+    "ground_truth_answer": "They used valence (the pleasantness of the stimulus), arousal (the intensity of emotion provoked), and dominance (the degree of control exerted by the stimulus)."
+  },
+  {
+    "question": "What does a cell in a word-context co-occurrence matrix represent?",
+    "ground_truth_answer": "Each cell records the number of times the target word (represented by the row) and the context word (represented by the column) co-occur nearby in a training corpus."
+  },
+  {
+    "question": "Why is the raw dot product a problematic metric for measuring word similarity?",
+    "ground_truth_answer": "The raw dot product is problematic because it favors long vectors. Frequent words tend to co-occur with more words, resulting in longer vectors and higher raw dot products simply due to their frequency."
+  },
+  {
+    "question": "How does cosine similarity correct the issue of vector length?",
+    "ground_truth_answer": "It modifies the dot product to normalize for vector length by dividing the dot product by the lengths of each of the two vectors."
+  },
+  {
+    "question": "What are the primary structural differences between sparse vectors and dense embeddings?",
+    "ground_truth_answer": "Sparse vectors are very long, with dimensionality matching the vocabulary size, and mostly contain zeros. Dense embeddings are short (ranging from 50 to 1000 dimensions) and contain real-valued numbers that can be negative."
+  },
+  {
+    "question": "Why might dense vectors perform better than sparse vectors in NLP applications?",
+    "ground_truth_answer": "Representing words as shorter dense vectors requires classifiers to learn far fewer weights, which possibly helps with generalization and avoiding overfitting. Dense vectors may also do a better job of capturing synonymy."
+  },
+  {
+    "question": "What is the core intuition behind the skip-gram algorithm?",
+    "ground_truth_answer": "The intuition is to train a classifier on a binary prediction task—asking if a word is likely to show up near a target word—and then take the learned classifier weights to use as the word embeddings."
+  },
+  {
+    "question": "How does skip-gram with negative sampling (SGNS) generate negative examples?",
+    "ground_truth_answer": "For each positive training instance, it creates negative samples by pairing the target word with a random 'noise word' from the lexicon, constrained so it is not the target word."
+  },
+  {
+    "question": "Why is the unigram probability weighting parameter alpha typically set to 0.75 in negative sampling?",
+    "ground_truth_answer": "Setting alpha = 0.75 gives better performance because it slightly increases the probability of selecting rare words as noise words."
+  },
+  {
+    "question": "How does the fasttext algorithm handle unknown words?",
+    "ground_truth_answer": "Fasttext uses subword models that represent each word as a bag of constituent character n-grams, meaning unknown words can be represented by the sum of the embeddings of their constituent n-grams."
+  },
+  {
+    "question": "What is a common method used to visualize high-dimensional word embeddings in two dimensions?",
+    "ground_truth_answer": "A common method is to project the dimensions down into 2 dimensions using a projection method called t-SNE."
+  },
+  {
+    "question": "What is the difference between first-order and second-order co-occurrence?",
+    "ground_truth_answer": "Two words have first-order co-occurrence (syntagmatic association) if they are typically nearby each other, whereas they have second-order co-occurrence (paradigmatic association) if they simply have similar neighbors."
+  },
+  {
+    "question": "How does the parallelogram model solve simple analogy problems like 'apple is to tree as grape is to what?'",
+    "ground_truth_answer": "It subtracts the vector for 'apple' from 'tree' and adds the vector for 'grape'; the nearest word to that resulting point is returned as the answer."
+  },
+  {
+    "question": "How can embeddings lead to 'allocational harm' in real-world systems?",
+    "ground_truth_answer": "Embeddings reproduce and amplify implicit biases and stereotypes latent in text. This can cause allocational harm if an algorithm uses these biased embeddings to unfairly allocate resources, such as incorrectly downweighting women's names when searching for programmers."
+  },
+  {
+    "question": "What are WordSim-353 and SimLex-999 used for?",
+    "ground_truth_answer": "They are intrinsic evaluation datasets used to test vector models by computing the correlation between an algorithm's word similarity scores and human-assigned ratings."
+  }
+]

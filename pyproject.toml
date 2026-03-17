@@ -1,0 +1,47 @@
+[project]
+name = "a6-naive-rag-vs-contextual-retrieval"
+version = "0.1.0"
+description = "Naive RAG vs Contextual Retrieval on Chapter 5 (Logistic Regression) — SLP3"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "pip>=26.0.1",
+    "tqdm>=4.67.3",
+    # RAG pipeline
+    "openai>=1.30.0",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-community>=0.3.0",
+    "faiss-cpu>=1.8.0",
+    "rouge-score>=0.1.2",
+    "streamlit>=1.35.0",
+    "python-dotenv>=1.0.0",
+    "pymupdf>=1.24.0",
+    "tiktoken>=0.7.0",
+    "nest-asyncio>=1.6.0",
+    "langchain-text-splitters>=1.1.1",
+    "nbconvert>=7.17.0",
+    "tabulate>=0.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = []
+exclude = ["notebook*", "example_input*", "datasets*", "models*", "tests*", "__pycache__*"]
